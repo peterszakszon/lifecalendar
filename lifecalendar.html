@@ -1,0 +1,36 @@
+<style>
+body, td {
+  font-size: 6px;
+}
+
+table {
+  border:1px solid black;border-collapse:collapse;
+}
+
+.b {
+  border:1px solid black;
+  width: 8px;
+  height: 5px;
+}
+</style>
+
+{{$years := .Years}}
+{{$weeks := .Weeks}}
+
+<table border="0">
+<tr>
+  <td>&nbsp;</td>
+{{range $week := $weeks}}
+  <td>{{.}}</td>
+{{end}}
+</tr>
+
+{{range $year := $years}}
+  <tr>
+  <td>{{.}}</td>
+  {{range $week := $weeks}}
+    <td class="b">&nbsp;</td>
+  {{end}}
+  </tr>
+{{end}}
+</table>
